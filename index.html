@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TerraLink - Internet Service Provider</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://kit.fontawesome.com/53cbf3eb97.js" crossorigin="anonymous"></script>
+
+<style>
+
+:root{
+    --primary:#23b998;
+    --dark:#0f172a;
+    --light:#f8fafc;
+}
+
+/* GLOBAL */
+body{
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--light);
+    overflow-x: hidden;
+    
+}
+
+section{
+    padding: 100px 0;
+}
+
+/* NAVBAR */
+.navbar{
+    padding:15px 0;
+    background: rgba(15,23,42,0.7);
+    backdrop-filter: blur(12px);
+    transition:0.3s ease;
+}
+
+
+.brand-text{
+    font-weight:700;
+    font-size:20px;
+    color:#23b998;
+    letter-spacing:1px;
+}
+.navbar-brand{
+    font-weight: bold;
+    color: var(--primary) !important;
+}
+.nav-link{
+    color:white !important;
+    font-weight:500;
+    margin-left:20px;
+    transition:0.3s;
+}
+
+.nav-link:hover{
+    color:#23b998 !important;
+}
+
+/*Hero*/
+
+.hero{
+    position:relative;
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    overflow:hidden;
+    background:#0f172a;
+    color:white;
+}
+
+/* Fiber Animation */
+.fiber-lines::before,
+.fiber-lines::after{
+    content:"";
+    position:absolute;
+    width:200%;
+    height:2px;
+    background:linear-gradient(90deg, transparent, #23b998, transparent);
+    animation:fiberMove 6s linear infinite;
+}
+
+.fiber-lines::before{ top:40%; }
+.fiber-lines::after{ top:60%; animation-delay:3s; }
+
+@keyframes fiberMove{
+    from{ transform:translateX(-50%); }
+    to{ transform:translateX(0%); }
+}
+
+/* Hero Content */
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:800px;
+    padding:20px;
+}
+
+/* Logo */
+.hero-logo{
+    height:300px;
+    margin-bottom:25px;
+}
+
+/* Text */
+.hero-content h1{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+.hero-content p{
+    margin-bottom:25px;
+}
+
+/* Coverage */
+.coverage-box{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.coverage-box input{
+    padding:12px 20px;
+    border-radius:50px;
+    border:none;
+    width:250px;
+    outline:none;
+}
+
+.coverage-box button{
+    padding:12px 25px;
+    border-radius:50px;
+    border:none;
+    background:linear-gradient(45deg,#23b998,#1aa583);
+    color:white;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.coverage-box button:hover{
+    transform:scale(1.05);
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .hero-logo{ height:200px; }
+    .hero-content h1{ font-size:2rem; }
+}
+/* ================= KEUNGGULAN ================= */
+
+.advantages-section{
+    padding:100px 0;
+    background:linear-gradient(135deg,#0f172a,#111827);
+    color:white;
+    position:relative;
+    overflow:hidden;
+}
+
+.section-title{
+    text-align:center;
+    font-size:2.2rem;
+    margin-bottom:60px;
+}
+
+.advantages-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.adv-card{
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(10px);
+    padding:40px 25px;
+    border-radius:20px;
+    text-align:center;
+    transition:0.4s ease;
+    border:1px solid rgba(255,255,255,0.1);
+}
+
+.adv-card:hover{
+    transform:translateY(-10px);
+    background:rgba(255,255,255,0.08);
+    box-shadow:0 20px 50px rgba(0,255,170,0.15);
+}
+
+.adv-icon{
+    font-size:40px;
+    margin-bottom:20px;
+    transition:0.4s;
+}
+
+.adv-card:hover .adv-icon{
+    transform:scale(1.2) rotate(10deg);
+}
+
+/* MINI STATS */
+.adv-stats{
+    display:flex;
+    justify-content:center;
+    gap:60px;
+    margin-top:80px;
+    flex-wrap:wrap;
+}
+
+.stat{
+    text-align:center;
+}
+
+.stat h4{
+    font-size:2rem;
+    color:#00ffcc;
+}
+
+.stat p{
+    color:#cbd5e1;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .adv-stats{
+        gap:30px;
+    }
+}
+
+/* ================= PRICING SECTION ================= */
+
+.pricing-section{
+    padding:100px 0;
+    background:#f8fafc;
+}
+
+.billing-toggle{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    margin-bottom:60px;
+}
+
+.switch{
+    position:relative;
+    display:inline-block;
+    width:50px;
+    height:24px;
+}
+
+.switch input{
+    display:none;
+}
+
+.slider{
+    position:absolute;
+    cursor:pointer;
+    background:#ccc;
+    border-radius:50px;
+    top:0; left:0; right:0; bottom:0;
+    transition:0.4s;
+}
+
+.slider:before{
+    content:"";
+    position:absolute;
+    height:18px;
+    width:18px;
+    left:3px;
+    bottom:3px;
+    background:white;
+    border-radius:50%;
+    transition:0.4s;
+}
+
+input:checked + .slider{
+    background:#00c896;
+}
+
+input:checked + .slider:before{
+    transform:translateX(26px);
+}
+
+.pricing-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:40px;
+}
+
+.price-card{
+    background:white;
+    padding:40px 30px;
+    border-radius:20px;
+    text-align:center;
+    transition:0.4s ease;
+    box-shadow:0 15px 40px rgba(0,0,0,0.05);
+    position:relative;
+}
+
+.price-card:hover{
+    transform:translateY(-15px);
+    box-shadow:0 25px 60px rgba(0,0,0,0.1);
+}
+
+.popular{
+    border:2px solid #00c896;
+    transform:scale(1.05);
+}
+
+.badge{
+    position:absolute;
+    top:-15px;
+    right:20px;
+    background:#00c896;
+    color:white;
+    padding:5px 15px;
+    border-radius:20px;
+    font-size:0.8rem;
+}
+
+.price{
+    font-size:2rem;
+    margin:20px 0;
+}
+
+.currency{
+    font-size:1rem;
+}
+
+.per{
+    color:gray;
+    margin-bottom:20px;
+}
+
+.price-card ul{
+    list-style:none;
+    padding:0;
+    margin-bottom:30px;
+}
+
+.price-card ul li{
+    margin:10px 0;
+}
+
+.btn-plan{
+    background:#0f172a;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:50px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn-plan:hover{
+    background:#00c896;
+}
+
+/* ================= FAQ SECTION ================= */
+
+.faq-section{
+    background:#f8fafc;
+    padding:100px 0;
+}
+
+.faq-title{
+    text-align:center;
+    font-size:2.2rem;
+    font-weight:700;
+    margin-bottom:50px;
+    color:#0f172a;
+}
+
+.faq-container{
+    max-width:800px;
+    margin:auto;
+}
+
+.faq-item{
+    background:white;
+    border-radius:15px;
+    margin-bottom:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.05);
+    overflow:hidden;
+    transition:0.3s ease;
+}
+
+.faq-question{
+    width:100%;
+    padding:20px 25px;
+    background:none;
+    border:none;
+    outline:none;
+    font-size:1rem;
+    font-weight:600;
+    text-align:left;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    cursor:pointer;
+}
+
+.faq-question:hover{
+    color:#23b998;
+}
+
+.faq-answer{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 0.4s ease, padding 0.3s ease;
+    padding:0 25px;
+}
+
+.faq-answer p{
+    margin:15px 0;
+    color:#475569;
+}
+
+.faq-item.active .faq-answer{
+    max-height:200px;
+    padding:10px 25px 20px 25px;
+}
+
+.faq-item.active .icon{
+    transform:rotate(45deg);
+}
+
+.icon{
+    font-size:20px;
+    transition:0.3s ease;
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .faq-title{
+        font-size:1.7rem;
+    }
+}
+
+/* ================= FAQ WHATSAPP CTA ================= */
+
+.faq-cta{
+    margin-top:60px;
+    text-align:center;
+    padding:40px;
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+    color:white;
+    box-shadow:0 15px 40px rgba(0,0,0,0.1);
+}
+
+.faq-cta h4{
+    font-size:1.5rem;
+    margin-bottom:10px;
+}
+
+.faq-cta p{
+    margin-bottom:25px;
+    color:#cbd5e1;
+}
+
+.wa-button{
+    display:inline-block;
+    padding:14px 30px;
+    border-radius:50px;
+    background:#25D366;
+    color:white;
+    font-weight:600;
+    text-decoration:none;
+    transition:0.3s ease;
+    box-shadow:0 10px 25px rgba(37,211,102,0.4);
+}
+
+.wa-button i{
+    margin-right:8px;
+}
+
+.wa-button:hover{
+    transform:translateY(-5px) scale(1.05);
+    box-shadow:0 20px 40px rgba(37,211,102,0.6);
+}
+
+/* ===============================
+FOOTER
+================================ */
+
+.footer{
+
+background:linear-gradient(135deg,#0f172a,#020617);
+color:white;
+padding-top:60px;
+
+}
+
+.footer-container{
+
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:40px;
+padding:40px 20px;
+
+}
+
+/* logo */
+
+.footer-logo{
+
+font-size:28px;
+color:#00c3ff;
+margin-bottom:15px;
+
+}
+
+/* text */
+
+.footer-col p{
+
+color:#cbd5e1;
+line-height:1.6;
+
+}
+
+/* links */
+
+.footer-col ul{
+
+list-style:none;
+padding:0;
+
+}
+
+.footer-col ul li{
+
+margin:10px 0;
+
+}
+
+.footer-col ul li a{
+
+text-decoration:none;
+color:#cbd5e1;
+transition:.3s;
+
+}
+
+.footer-col ul li a:hover{
+
+color:#00c3ff;
+padding-left:5px;
+
+}
+
+/* social */
+
+.footer-social{
+
+margin-top:20px;
+
+}
+
+.footer-social a{
+
+display:inline-flex;
+align-items:center;
+justify-content:center;
+
+width:40px;
+height:40px;
+
+background:#1e293b;
+margin-right:10px;
+
+border-radius:50%;
+
+color:white;
+
+transition:.3s;
+
+}
+
+.footer-social a:hover{
+
+background:#00c3ff;
+transform:translateY(-3px);
+
+}
+
+/* newsletter */
+
+.newsletter{
+
+margin-top:15px;
+display:flex;
+
+}
+
+.newsletter input{
+
+flex:1;
+padding:10px;
+border:none;
+outline:none;
+border-radius:5px 0 0 5px;
+
+}
+
+.newsletter button{
+
+padding:10px 20px;
+border:none;
+background:#00c3ff;
+color:white;
+cursor:pointer;
+
+border-radius:0 5px 5px 0;
+
+transition:.3s;
+
+}
+
+.newsletter button:hover{
+
+background:#009ad6;
+
+}
+
+/* bottom */
+
+.footer-bottom{
+
+border-top:1px solid #1e293b;
+text-align:center;
+padding:20px;
+color:#94a3b8;
+margin-top:40px;
+
+}
+
+/* responsive */
+
+@media(max-width:768px){
+
+.footer-container{
+
+text-align:center;
+
+}
+
+.newsletter{
+
+flex-direction:column;
+
+}
+
+.newsletter input{
+
+border-radius:5px;
+margin-bottom:10px;
+
+}
+
+.newsletter button{
+
+border-radius:5px;
+
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+ <nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navmenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="Harga.html">Pricing</a></li>
+        <li class="nav-item"><a class="nav-link" href="Company-profile.html">Company Profile</a></li>
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
+<!-- HERO -->
+ <section class="hero">
+
+    <div class="fiber-lines"></div>
+
+    <div class="hero-content">
+
+        <img src="img/logo-terralink.png" alt="TerraLink Logo" class="hero-logo" height="300px">
+
+        <h1>Jaringan Fiber Optic Ultra Cepat</h1>
+
+        <p>
+            TerraLink menghadirkan koneksi internet stabil,
+            cepat, dan tanpa batas untuk rumah dan bisnis Anda.
+        </p>
+
+        <div class="coverage-box">
+            <input type="text" id="locationInput" placeholder="Masukkan lokasi Anda...">
+            <button onclick="checkCoverage()">Cek Coverage</button>
+        </div>
+
+        <p id="coverageResult" class="coverage-result"></p>
+
+    </div>
+
+</section>
+
+<!-- KEUNGGULAN -->
+<section class="advantages-section">
+
+    <div class="container">
+
+        <h2 class="section-title">Kenapa Memilih TerraLink?</h2>
+
+        <div class="advantages-grid">
+
+            <div class="adv-card">
+                <div class="adv-icon">⚡</div>
+                <h3>Kecepatan Stabil</h3>
+                <p>Koneksi Fiber Optic 100% stabil tanpa gangguan cuaca.</p>
+            </div>
+
+            <div class="adv-card">
+                <div class="adv-icon">🛡️</div>
+                <h3>Keamanan Terjamin</h3>
+                <p>Proteksi jaringan modern dengan sistem monitoring 24/7.</p>
+            </div>
+
+            <div class="adv-card">
+                <div class="adv-icon">📡</div>
+                <h3>Coverage Luas</h3>
+                <p>Jaringan terus berkembang menjangkau lebih banyak area.</p>
+            </div>
+
+            <div class="adv-card">
+                <div class="adv-icon">💬</div>
+                <h3>Support 24/7</h3>
+                <p>Tim profesional siap membantu kapan saja Anda butuhkan.</p>
+            </div>
+
+        </div>
+
+        <!-- MINI STATS -->
+        <div class="adv-stats">
+
+    <div class="stat">
+        <h4 class="counter" data-target="500">0</h4>
+        <p>Pelanggan Aktif</p>
+    </div>
+
+    <div class="stat">
+        <h4 class="counter" data-target="99">0</h4>
+        <p>Network Uptime (%)</p>
+    </div>
+
+    <div class="stat">
+        <h4 class="counter" data-target="24">0</h4>
+        <p>Support (Jam)</p>
+    </div>
+
+</div>
+
+    </div>
+
+</section>
+
+<!-- PAKET -->
+<section class="pricing-section">
+
+    <div class="container">
+
+        <h2 class="section-title">Paket Layanan TerraLink</h2>
+
+        <!-- Toggle Billing -->
+        <div class="billing-toggle">
+            <span>Bulanan</span>
+            <label class="switch">
+                <input type="checkbox" id="billingToggle">
+                <span class="slider"></span>
+            </label>
+            <span>Tahunan <small>(Hemat 20%)</small></span>
+        </div>
+
+        <div class="pricing-grid">
+
+            <!-- BASIC -->
+            <div class="price-card">
+                <h3>Standart</h3>
+                <div class="price">
+                    <span class="currency">Rp</span>
+                    <span class="amount" data-month="199000" data-year="159000">200.000</span>
+                </div>
+                <p class="per">/bulan</p>
+
+                <ul>
+                    <li>✔ 20 Mbps</li>
+                    <li>✔ Unlimited</li>
+                    <li>✔ Support 24/7</li>
+                </ul>
+
+                <a href="Harga.html"><button class="btn-plan">Lihat Paket</button></a>
+            </div>
+
+            <!-- POPULAR -->
+            <div class="price-card popular">
+                <div class="badge">Paling Populer</div>
+
+                <h3>Paket rame</h3>
+                <div class="price">
+                    <span class="currency">Rp</span>
+                    <span class="amount" data-month="299000" data-year="239000">235.000</span>
+                </div>
+                <p class="per">/bulan</p>
+
+                <ul>
+                    <li>✔ 30 Mbps</li>
+                    <li>✔ Unlimited</li>
+                    <li>✔ Priority Support</li>
+                    <li>✔ Gratis Instalasi</li>
+                </ul>
+
+                <a href="Harga.html"><button class="btn-plan">Lihat Paket</button></a>
+            </div>
+
+            <!-- BUSINESS -->
+            <div class="price-card">
+                <h3>Premium</h3>
+                <div class="price">
+                    <span class="currency">Rp</span>
+                    <span class="amount" data-month="499000" data-year="399000">375.000</span>
+                </div>
+                <p class="per">/bulan</p>
+
+                <ul>
+                    <li>✔ 100 Mbps</li>
+                    <li>✔ Unlimited</li>
+                    <li>✔ SLA 99%</li>
+                    <li>✔ Dedicated Support</li>
+                </ul>
+
+               <a href="Harga.html"><button class="btn-plan">Lihat Paket</button></a>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Faq-->
+<section class="faq-section">
+    <div class="container">
+
+        <h2 class="faq-title">Pertanyaan yang Sering Diajukan</h2>
+
+        <div class="faq-container">
+
+            <!-- 1 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    Apakah TerraLink menggunakan jaringan Fiber Optic?
+                    <span class="icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Ya, TerraLink menggunakan 100% jaringan Fiber Optic untuk memastikan koneksi stabil, cepat, dan minim gangguan.</p>
+                </div>
+            </div>
+
+            <!-- 2 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    Apakah internet TerraLink Unlimited?
+                    <span class="icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Semua paket TerraLink bersifat Unlimited tanpa FUP sehingga Anda dapat menikmati internet tanpa batas kuota.</p>
+                </div>
+            </div>
+
+            <!-- 3 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    Berapa lama proses instalasi?
+                    <span class="icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Proses instalasi biasanya memakan waktu 1–3 hari kerja setelah area Anda terkonfirmasi tercover jaringan.</p>
+                </div>
+            </div>
+
+            <!-- 4 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    Apakah tersedia layanan customer support 24 jam?
+                    <span class="icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Ya, tim support TerraLink tersedia 24/7 untuk membantu kendala teknis maupun informasi layanan.</p>
+                </div>
+            </div>
+
+            <!-- 5 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    Bagaimana cara mengecek coverage area?
+                    <span class="icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Anda dapat menggunakan fitur Coverage Check pada halaman utama atau menghubungi tim kami untuk pengecekan langsung.</p>
+                </div>
+            </div>
+
+            <!-- 6 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    Apakah ada biaya instalasi?
+                    <span class="icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Biaya instalasi tergantung pada promo yang sedang berjalan. Silakan cek bagian paket atau hubungi sales kami.</p>
+                </div>
+            </div>
+
+            <!-- 7 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    Berapa jumlah perangkat yang bisa terhubung?
+                    <span class="icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Tergantung paket yang dipilih. Paket 30 Mbps cocok untuk 2–3 perangkat, sedangkan paket lebih tinggi mendukung lebih banyak perangkat.</p>
+                </div>
+            </div>
+
+            <!-- 8 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    Bagaimana metode pembayarannya?
+                    <span class="icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Kami menyediakan berbagai metode pembayaran seperti transfer bank, virtual account, dan e-wallet.</p>
+                </div>
+            </div>
+
+            <!-- 9 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    Apakah tersedia paket untuk bisnis?
+                    <span class="icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Ya, TerraLink menyediakan paket khusus bisnis dengan SLA dan prioritas bandwidth lebih tinggi.</p>
+                </div>
+            </div>
+
+            <!-- 10 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    Apa yang harus dilakukan jika internet mengalami gangguan?
+                    <span class="icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Silakan restart perangkat ONT/router terlebih dahulu. Jika masih bermasalah, hubungi tim support kami untuk pengecekan lebih lanjut.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<div class="faq-cta">
+    <h4>Masih ada pertanyaan?</h4>
+    <p>Tim TerraLink siap membantu Anda 24/7.</p>
+    
+    <a href="https://wa.me/6288210980060" target="_blank" class="wa-button">
+        <i class="fa-brands fa-whatsapp"></i> Hubungi Kami via WhatsApp
+    </a>
+</div>
+
+<footer class="footer">
+
+<div class="footer-container">
+
+<!-- COMPANY INFO -->
+<div class="footer-col">
+
+<h2 class="footer-logo">TerraLink</h2>
+
+<p>
+TerraLink adalah penyedia layanan internet fiber optic
+yang menghadirkan koneksi cepat, stabil, dan terpercaya
+untuk rumah dan bisnis di Indonesia.
+</p>
+
+<div class="footer-social">
+
+<a href="#"><i class="fab fa-facebook"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-twitter"></i></a>
+<a href="#"><i class="fab fa-linkedin"></i></a>
+
+</div>
+
+</div>
+
+
+<!-- QUICK LINKS -->
+<div class="footer-col">
+
+<h3>Navigasi</h3>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+<li><a href="pricing.html">Paket Internet</a></li>
+<li><a href="about.html">Tentang Kami</a></li>
+<li><a href="#">Coverage Area</a></li>
+<li><a href="#">Kontak</a></li>
+
+</ul>
+
+</div>
+
+
+<!-- SERVICES -->
+<div class="footer-col">
+
+<h3>Layanan</h3>
+
+<ul>
+
+<li><a href="#">Internet Rumah</a></li>
+<li><a href="#">Internet Bisnis</a></li>
+<li><a href="#">Dedicated Internet</a></li>
+<li><a href="#">Instalasi Fiber</a></li>
+<li><a href="#">Maintenance</a></li>
+
+</ul>
+
+</div>
+
+
+<!-- NEWSLETTER -->
+<div class="footer-col">
+
+<h3>Berlangganan Info</h3>
+
+<p>Dapatkan promo dan update terbaru dari TerraLink.</p>
+
+<form class="newsletter">
+
+<input type="email" placeholder="Email Anda">
+
+<button type="submit">Subscribe</button>
+
+</form>
+
+</div>
+
+</div>
+
+
+<!-- COPYRIGHT -->
+<div class="footer-bottom">
+
+<p>© 2026 TerraLink ISP. All Rights Reserved.</p>
+
+</div>
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+// Scroll Animation
+const fadeElements = document.querySelectorAll(".fade-up");
+
+window.addEventListener("scroll", () => {
+    fadeElements.forEach(el => {
+        const position = el.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.2;
+
+        if(position < screenPosition){
+            el.classList.add("show");
+        }
+    });
+});
+function checkCoverage(){
+    const input = document.getElementById("locationInput").value.toLowerCase();
+    const result = document.getElementById("coverageResult");
+
+    const availableAreas = [
+        "surabaya",
+        "sidoarjo",
+        "gresik",
+        "malang",
+        "jakarta"
+    ];
+
+    if(input === ""){
+        result.style.color = "orange";
+        result.innerText = "Silakan masukkan lokasi terlebih dahulu.";
+        return;
+    }
+
+    if(availableAreas.includes(input)){
+        result.style.color = "#23b998";
+        result.innerText = "✅ Selamat! Area Anda sudah tercover TerraLink.";
+    } else {
+        result.style.color = "red";
+        result.innerText = "❌ Maaf, area Anda belum tercover. Hubungi tim kami untuk ekspansi jaringan.";
+    }
+}
+const faqItems = document.querySelectorAll(".faq-item");
+
+faqItems.forEach(item => {
+    const button = item.querySelector(".faq-question");
+
+    button.addEventListener("click", () => {
+        item.classList.toggle("active");
+    });
+});
+const counters = document.querySelectorAll('.counter');
+let started = false;
+
+function startCounter() {
+    counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        let count = 0;
+        const increment = target / 200;
+
+        const updateCount = () => {
+            if (count < target) {
+                count += increment;
+                counter.innerText = Math.floor(count).toLocaleString();
+                requestAnimationFrame(updateCount);
+            } else {
+                counter.innerText = target.toLocaleString() + "+";
+            }
+        };
+
+        updateCount();
+    });
+}
+
+window.addEventListener("scroll", () => {
+    const section = document.querySelector(".adv-stats");
+    const sectionTop = section.getBoundingClientRect().top;
+    const triggerPoint = window.innerHeight - 100;
+
+    if (sectionTop < triggerPoint && !started) {
+        startCounter();
+        started = true;
+    }
+});
+</script>
+
+</body>
+</html>

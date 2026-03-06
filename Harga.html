@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paket & Harga - TerraLink</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://kit.fontawesome.com/53cbf3eb97.js" crossorigin="anonymous"></script>
+</head>
+<style>
+  :root{
+    --primary:#23b998;
+    --dark:#0f172a;
+    --light:#f8fafc;
+}
+
+    body{
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--light);
+      overflow-x: hidden;
+      background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    }
+    .navbar{
+    padding:15px 0;
+    background: rgba(15,23,42,0.7);
+    backdrop-filter: blur(12px);
+    transition:0.3s ease;
+}
+
+.brand-text{
+    font-weight:700;
+    font-size:20px;
+    color:#23b998;
+    letter-spacing:1px;
+}
+.navbar-brand{
+    font-weight: bold;
+    color: var(--primary) !important;
+}
+.nav-link{
+    color:white !important;
+    font-weight:500;
+    margin-left:20px;
+    transition:0.3s;
+}
+
+.nav-link:hover{
+    color:#23b998 !important;
+}
+
+/* HERO */
+
+.pricing-hero{
+
+height:80vh;
+
+
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+text-align:center;
+
+color:white;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+
+.hero-btn{
+
+background:#23b998;
+
+padding:15px 30px;
+
+border-radius:30px;
+
+text-decoration:none;
+
+color:white;
+
+margin-top: 50px;
+
+}
+
+
+/* PERBANDINGAN */
+
+.comparison{
+
+padding:100px 20px;
+
+
+
+text-align:center;
+
+}
+
+.comparison-table{
+
+max-width:1000px;
+
+margin:auto;
+
+}
+
+.row{
+
+display:grid;
+
+grid-template-columns:2fr repeat(5,1fr);
+
+padding:15px;
+
+border-bottom:1px solid #eee;
+
+}
+
+.header{
+
+font-weight:bold;
+
+background:#23b998;
+
+color:white;
+
+}
+
+/* SECTION PRICING */
+
+.pricing-section{
+padding:120px 20px;
+
+color:white;
+text-align:center;
+}
+
+/* Header */
+
+.pricing-header h1{
+font-size:40px;
+margin-bottom:10px;
+}
+
+.pricing-header p{
+opacity:0.8;
+margin-bottom:30px;
+}
+
+/* Toggle switch */
+
+.toggle{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:10px;
+margin-bottom:60px;
+}
+
+.switch{
+position:relative;
+display:inline-block;
+width:50px;
+height:24px;
+}
+
+.switch input{
+display:none;
+}
+
+.slider{
+position:absolute;
+cursor:pointer;
+background:#ccc;
+border-radius:20px;
+top:0;
+left:0;
+right:0;
+bottom:0;
+}
+
+.slider:before{
+content:"";
+position:absolute;
+height:18px;
+width:18px;
+left:3px;
+bottom:3px;
+background:white;
+border-radius:50%;
+transition:0.3s;
+}
+
+input:checked + .slider{
+background:#23b998;
+}
+
+input:checked + .slider:before{
+transform:translateX(26px);
+}
+
+
+/* Grid */
+
+.pricing-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+max-width:1200px;
+margin:auto;
+}
+
+/* Card */
+
+.pricing-card{
+background:white;
+color:#333;
+border-radius:20px;
+padding:40px 25px;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+transition:0.3s;
+position:relative;
+}
+
+.pricing-card:hover{
+transform:translateY(-12px);
+}
+
+/* Most popular */
+
+.popular{
+transform:scale(1.05);
+border:3px solid #23b998;
+}
+
+.badge{
+position:absolute;
+top:-12px;
+left:50%;
+transform:translateX(-50%);
+background:#23b998;
+color:white;
+padding:5px 15px;
+border-radius:20px;
+font-size:12px;
+}
+
+/* Speed */
+
+.speed{
+font-weight:bold;
+margin:10px 0;
+}
+
+/* Price */
+
+.price{
+font-size:32px;
+color:#23b998;
+margin:15px 0;
+}
+
+/* Feature list */
+
+.pricing-card ul{
+list-style:none;
+padding:0;
+margin:20px 0;
+}
+
+.pricing-card li{
+margin:8px 0;
+}
+
+/* Button */
+
+.choose-btn{
+background:#23b998;
+border:none;
+color:white;
+padding:12px 25px;
+border-radius:30px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.choose-btn:hover{
+background:#1ea382;
+}
+
+/* cmparasin */
+.comparison{
+padding:100px 20px;
+
+text-align:center;
+}
+
+.comparison h2{
+font-size:32px;
+margin-bottom:40px;
+color: white;
+}
+
+.comparison-table{
+max-width:1100px;
+margin:auto;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 10px 40px rgba(0,0,0,0.08);
+}
+
+.row{
+display:grid;
+grid-template-columns:2fr repeat(5,1fr);
+padding:18px;
+background:white;
+border-bottom:1px solid #eee;
+}
+
+.row.header{
+background:#0f172a;
+color:white;
+font-weight:600;
+}
+
+/*Kenapa terralink*/
+.why-pricing{
+padding:100px 20px;
+background:white;
+text-align:center;
+}
+
+.why-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+max-width:1000px;
+margin:auto;
+margin-top:40px;
+}
+
+.why-card{
+padding:30px;
+background:#f1f5f9;
+border-radius:15px;
+transition:0.3s;
+}
+
+.why-card:hover{
+transform:translateY(-8px);
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* WHY TERRALINK */
+
+.why-terralink{
+
+padding:100px 20px;
+
+text-align:center;
+
+
+
+}
+
+.why-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:30px;
+
+max-width:1100px;
+
+margin:auto;
+
+}
+
+.why-card{
+
+background:white;
+
+padding:30px;
+
+border-radius:15px;
+
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+
+transition:0.3s;
+
+margin-top: 10px;
+
+}
+
+.why-card:hover{
+
+transform:translateY(-10px);
+
+}
+
+
+/* RECOMMEND */
+
+.recommend{
+
+padding:100px 20px;
+
+
+color:white;
+
+text-align:center;
+
+}
+
+.recommend select{
+
+padding:10px;
+
+border-radius:10px;
+
+margin:20px;
+
+}
+
+
+/* CTA */
+
+.faq-cta{
+    text-align:center;
+    padding:40px;
+    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    color:white;
+    box-shadow:0 15px 40px rgba(0,0,0,0.1);
+}
+
+.faq-cta h4{
+    font-size:1.5rem;
+    margin-bottom:10px;
+}
+
+.faq-cta p{
+    margin-bottom:25px;
+    color:#cbd5e1;
+}
+
+.wa-button{
+    display:inline-block;
+    padding:14px 30px;
+    border-radius:50px;
+    background:#25D366;
+    color:white;
+    font-weight:600;
+    text-decoration:none;
+    transition:0.3s ease;
+    box-shadow:0 10px 25px rgba(37,211,102,0.4);
+}
+
+.wa-button i{
+    margin-right:8px;
+}
+
+.wa-button:hover{
+    transform:translateY(-5px) scale(1.05);
+    box-shadow:0 20px 40px rgba(37,211,102,0.6);
+}
+
+/* ===============================
+FOOTER
+================================ */
+
+.footer{
+
+background:linear-gradient(135deg,#0f172a,#020617);
+color:white;
+padding-top:60px;
+
+}
+
+.footer-container{
+
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:40px;
+padding:40px 20px;
+
+}
+
+/* logo */
+
+.footer-logo{
+
+font-size:28px;
+color:#00c3ff;
+margin-bottom:15px;
+
+}
+
+/* text */
+
+.footer-col p{
+
+color:#cbd5e1;
+line-height:1.6;
+
+}
+
+/* links */
+
+.footer-col ul{
+
+list-style:none;
+padding:0;
+
+}
+
+.footer-col ul li{
+
+margin:10px 0;
+
+}
+
+.footer-col ul li a{
+
+text-decoration:none;
+color:#cbd5e1;
+transition:.3s;
+
+}
+
+.footer-col ul li a:hover{
+
+color:#00c3ff;
+padding-left:5px;
+
+}
+
+/* social */
+
+.footer-social{
+
+margin-top:20px;
+
+}
+
+.footer-social a{
+
+display:inline-flex;
+align-items:center;
+justify-content:center;
+
+width:40px;
+height:40px;
+
+background:#1e293b;
+margin-right:10px;
+
+border-radius:50%;
+
+color:white;
+
+transition:.3s;
+
+}
+
+.footer-social a:hover{
+
+background:#00c3ff;
+transform:translateY(-3px);
+
+}
+
+/* newsletter */
+
+.newsletter{
+
+margin-top:15px;
+display:flex;
+
+}
+
+.newsletter input{
+
+flex:1;
+padding:10px;
+border:none;
+outline:none;
+border-radius:5px 0 0 5px;
+
+}
+
+.newsletter button{
+
+padding:10px 20px;
+border:none;
+background:#00c3ff;
+color:white;
+cursor:pointer;
+
+border-radius:0 5px 5px 0;
+
+transition:.3s;
+
+}
+
+.newsletter button:hover{
+
+background:#009ad6;
+
+}
+
+/* bottom */
+
+.footer-bottom{
+
+border-top:1px solid #1e293b;
+text-align:center;
+padding:20px;
+color:#94a3b8;
+margin-top:40px;
+
+}
+
+/* responsive */
+
+@media(max-width:768px){
+
+.footer-container{
+
+text-align:center;
+
+}
+
+.newsletter{
+
+flex-direction:column;
+
+}
+
+.newsletter input{
+
+border-radius:5px;
+margin-bottom:10px;
+
+}
+
+.newsletter button{
+
+border-radius:5px;
+
+}
+
+}
+
+</style>
+<body>
+
+<!-- NAVBAR (gunakan navbar index kamu) -->
+
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navmenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
+        <li class="nav-item"><a class="nav-link" href="Company-profile.html">Company Profile</a></li>
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
+<!-- ===== HERO PRICING ===== -->
+
+<section class="pricing-hero">
+
+<div class="hero-content">
+
+<h1>Paket Internet Fiber TerraLink</h1>
+
+<p>
+Nikmati koneksi internet ultra cepat dengan teknologi
+fiber optic terbaru untuk rumah dan bisnis.
+</p>
+
+<a href="#pricing" class="hero-btn">Lihat Paket</a>
+
+</div>
+
+</section>
+
+<section class="pricing-section" id="pricing">
+
+<div class="pricing-header">
+<h1>Paket Internet TerraLink</h1>
+<p>Pilih paket internet fiber optic terbaik untuk rumah Anda</p>
+
+<!-- Toggle harga -->
+<div class="toggle">
+<span>Bulanan</span>
+<label class="switch">
+<input type="checkbox" id="priceToggle">
+<span class="slider"></span>
+</label>
+<span>Tahunan</span>
+</div>
+
+</div>
+
+
+<div class="pricing-grid" id="pricing">
+
+<!-- Paket 1 -->
+<div class="pricing-card">
+<h3>Super Hemat</h3>
+<p class="speed">10 Mbps</p>
+<h2 class="price" data-month="150000" data-year="1500000">150.000</h2>
+
+<ul>
+<li>Browsing & Chat</li>
+<li>1-2 Device</li>
+<li>Unlimited Internet</li>
+<li>Support Standard</li>
+</ul>
+
+<button class="choose-btn" onclick="orderPackage('Super Hemat - 10 Mbps - Rp150.000')">Pilih Paket</button>
+</div>
+
+
+<!-- Paket 2 -->
+<div class="pricing-card">
+<h3>Standart</h3>
+<p class="speed">20 Mbps</p>
+<h2 class="price" data-month="200000" data-year="2000000">200.000</h2>
+
+<ul>
+<li>Streaming HD</li>
+<li>2-3 Device</li>
+<li>Unlimited Internet</li>
+<li>Priority Support</li>
+</ul>
+
+<button class="choose-btn" onclick="orderPackage('Standart - 20 Mbps - Rp200.000')">Pilih Paket</button>
+</div>
+
+
+<!-- Paket 3 MOST POPULAR -->
+<div class="pricing-card popular">
+
+<div class="badge">Most Popular</div>
+
+<h3>Paket Rame</h3>
+<p class="speed">30 Mbps</p>
+<h2 class="price" data-month="235000" data-year="2350000">235.000</h2>
+
+<ul>
+<li>Streaming + Gaming</li>
+<li>3-4 Device</li>
+<li>Unlimited Internet</li>
+<li>Priority Support</li>
+</ul>
+
+<button class="choose-btn" onclick="orderPackage('Paket Rame - 30 Mbps - Rp235.000')">Pilih Paket</button>
+
+</div>
+
+
+<!-- Paket 4 -->
+<div class="pricing-card">
+<h3>Premium</h3>
+<p class="speed">50 Mbps</p>
+<h2 class="price" data-month="300000" data-year="3000000">300.000</h2>
+
+<ul>
+<li>Gaming Stabil</li>
+<li>4-6 Device</li>
+<li>Unlimited Internet</li>
+<li>Fast Support</li>
+</ul>
+
+<button class="choose-btn" onclick="orderPackage('Premium - 50 Mbps - Rp300.000')">Pilih Paket</button>
+</div>
+
+
+<!-- Paket 5 -->
+<div class="pricing-card">
+<h3>Super Premium</h3>
+<p class="speed">100 Mbps</p>
+<h2 class="price" data-month="370000" data-year="3700000">375.000</h2>
+
+<ul>
+<li>Rumah / Kantor</li>
+<li>8+ Device</li>
+<li>Unlimited Internet</li>
+<li>VIP Support</li>
+</ul>
+
+<button class="choose-btn" onclick="orderPackage('Super Premium - 100 Mbps - Rp370.000')">Pilih Paket</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ===== PERBANDINGAN PAKET ===== -->
+
+<section class="comparison">
+
+<h2>Perbandingan Paket TerraLink</h2>
+
+<div class="comparison-table">
+
+<div class="row header">
+<div>Fitur</div>
+<div>10 Mbps</div>
+<div>20 Mbps</div>
+<div>30 Mbps</div>
+<div>50 Mbps</div>
+<div>100 Mbps</div>
+</div>
+
+<div class="row">
+<div>Streaming</div>
+<div>HD</div>
+<div>HD+</div>
+<div>Full HD</div>
+<div>4K</div>
+<div>4K+</div>
+</div>
+
+<div class="row">
+<div>Gaming</div>
+<div>✓</div>
+<div>✓</div>
+<div>✓✓</div>
+<div>✓✓✓</div>
+<div>✓✓✓</div>
+</div>
+
+<div class="row">
+<div>Device</div>
+<div>1-2</div>
+<div>2-3</div>
+<div>3-4</div>
+<div>4-6</div>
+<div>8+</div>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ===== KENAPA MEMILIH TERRALINK ===== -->
+
+<section class="why-terralink">
+
+<h2 class="text-white">Kenapa Memilih TerraLink?</h2>
+
+<div class="why-grid">
+
+<div class="why-card">
+
+<div class="icon">⚡</div>
+
+<h3>Fiber Optic 100%</h3>
+
+<p>
+Menggunakan teknologi fiber optic terbaru untuk
+koneksi stabil dan cepat.
+</p>
+
+</div>
+
+<div class="why-card">
+
+<div class="icon">🌍</div>
+
+<h3>Coverage Luas</h3>
+
+<p>
+Jaringan TerraLink terus berkembang di berbagai kota.
+</p>
+
+</div>
+
+<div class="why-card">
+
+<div class="icon">📞</div>
+
+<h3>Support 24/7</h3>
+
+<p>
+Tim teknisi siap membantu kapan saja jika terjadi
+gangguan jaringan.
+</p>
+
+</div>
+
+<div class="why-card">
+
+<div class="icon">🚀</div>
+
+<h3>Instalasi Cepat</h3>
+
+<p>
+Proses pemasangan cepat dan mudah hanya dalam 1-2 hari.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===== SPEED RECOMMENDATION ===== -->
+
+<section class="recommend">
+
+<h2>Rekomendasi Kecepatan Internet</h2>
+
+<p>Pilih jumlah orang yang menggunakan internet di rumah</p>
+
+<select id="users">
+
+<option value="10">1-2 Orang</option>
+
+<option value="20">3-4 Orang</option>
+
+<option value="30">5-6 Orang</option>
+
+<option value="50">7+ Orang</option>
+
+</select>
+
+<button onclick="recommendSpeed()">Lihat Rekomendasi</button>
+
+<p id="result"></p>
+
+</section>
+
+<!-- ===== CTA ===== -->
+
+<div class="faq-cta">
+    <h4>Masih ada pertanyaan?</h4>
+    <p>Tim TerraLink siap membantu Anda 24/7.</p>
+    
+    <a href="https://wa.me/6288210980060" target="_blank" class="wa-button">
+        <i class="fa-brands fa-whatsapp"></i> Hubungi Kami via WhatsApp
+    </a>
+</div>
+
+<footer class="footer">
+
+<div class="footer-container">
+
+<!-- COMPANY INFO -->
+<div class="footer-col">
+
+<h2 class="footer-logo">TerraLink</h2>
+
+<p>
+TerraLink adalah penyedia layanan internet fiber optic
+yang menghadirkan koneksi cepat, stabil, dan terpercaya
+untuk rumah dan bisnis di Indonesia.
+</p>
+
+<div class="footer-social">
+
+<a href="#"><i class="fab fa-facebook"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-twitter"></i></a>
+<a href="#"><i class="fab fa-linkedin"></i></a>
+
+</div>
+
+</div>
+
+
+<!-- QUICK LINKS -->
+<div class="footer-col">
+
+<h3>Navigasi</h3>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+<li><a href="pricing.html">Paket Internet</a></li>
+<li><a href="about.html">Tentang Kami</a></li>
+<li><a href="#">Coverage Area</a></li>
+<li><a href="#">Kontak</a></li>
+
+</ul>
+
+</div>
+
+
+<!-- SERVICES -->
+<div class="footer-col">
+
+<h3>Layanan</h3>
+
+<ul>
+
+<li><a href="#">Internet Rumah</a></li>
+<li><a href="#">Internet Bisnis</a></li>
+<li><a href="#">Dedicated Internet</a></li>
+<li><a href="#">Instalasi Fiber</a></li>
+<li><a href="#">Maintenance</a></li>
+
+</ul>
+
+</div>
+
+
+<!-- NEWSLETTER -->
+<div class="footer-col">
+
+<h3>Berlangganan Info</h3>
+
+<p>Dapatkan promo dan update terbaru dari TerraLink.</p>
+
+<form class="newsletter">
+
+<input type="email" placeholder="Email Anda">
+
+<button type="submit">Subscribe</button>
+
+</form>
+
+</div>
+
+</div>
+
+
+<!-- COPYRIGHT -->
+<div class="footer-bottom">
+
+<p>© 2026 TerraLink ISP. All Rights Reserved.</p>
+
+</div>
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    function orderPackage(packageName){
+
+    const phoneNumber = "6288210980060"; // Ganti jika perlu
+
+    const message = `Halo TerraLink, saya tertarik dengan paket ${packageName}. Mohon informasi lebih lanjut.`;
+
+    const encodedMessage = encodeURIComponent(message);
+
+    const url = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+    window.open(url, "_blank");
+    }
+    // Toggle harga bulanan / tahunan
+
+const toggle = document.getElementById("priceToggle")
+const prices = document.querySelectorAll(".price")
+
+toggle.addEventListener("change",()=>{
+
+prices.forEach(price=>{
+
+let month = price.getAttribute("data-month")
+let year = price.getAttribute("data-year")
+
+price.innerText = toggle.checked ? year : month
+
+})
+
+})
+function recommendSpeed(){
+
+let users = document.getElementById("users").value
+
+let result = document.getElementById("result")
+
+result.innerText = "Rekomendasi paket: " + users + " Mbps"
+
+}
+</script>
+</body>
+</html>
